@@ -28,7 +28,7 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ route('login') }}" class="space-y-4">
+    <form method="POST" action="{{ route('login') }}" class="space-y-4" onsubmit="return validateTermsAgreement()">
         @csrf
 
         <!-- Email Address -->
@@ -68,6 +68,20 @@
         </button>
     </div>
 </div>
+ <!-- Terms and Conditions Checkbox -->
+ <div class="flex items-start gap-2 mt-4">
+    <input 
+        id="terms" 
+        name="terms" 
+        type="checkbox" 
+        onclick="handleTermsClick(event)" 
+        class="rounded text-blue-600 focus:ring-blue-500"
+    >
+    <label for="terms" class="text-sm text-white-700 select-none">
+        I agree to the Terms and Conditions.
+    </label>
+</div>
+
         <div class="flex flex-col gap-3 mt-6">
             <button class="w-full py-2 rounded-md bg-blue-600 hover:bg-blue-700 font-semibold text-white">Log in</button>
 
@@ -83,7 +97,43 @@
                 Sign up here
             </a>
         </div>
+        </form>
+
+<!-- Terms and Conditions Modal -->
+<div id="termsModal" class="fixed inset-0 hidden bg-black bg-opacity-80 flex justify-center items-center z-50 p-4 transition-all duration-300 opacity-0">
+    <div class="bg-blue-700 p-8 rounded-2xl max-w-2xl w-full relative shadow-2xl transform scale-95 transition-all duration-300">
+        <h2 class="text-3xl font-bold mb-6 text-center text-white">Terms and Conditions</h2>
+
+        <div class="h-80 overflow-y-auto text-base text-white leading-relaxed p-2 space-y-4 font-semibold">
+            <p>Welcome to StoreMe! These terms and conditions govern your use of our locker rental services, including the website and any associated services. By using our Services, you agree to be bound by these Terms.</p>
+
+            <ul class="list-disc list-inside pl-4 space-y-2">
+                <li>You will have access to the rented locker during the rental period specified in your reservation.</li>
+                <li>Rental fees are due in full at the time of reservation. Payments are non-refundable unless otherwise stated.</li>
+                <li>A security payment may be required to cover any damages or additional fees.</li>
+                <li>Exceeding the rental period will result in additional charges.</li>
+                <li>Do not store illegal, hazardous, or perishable items.</li>
+                <li>StoreMe reserves the right to inspect lockers and terminate access if terms are violated.</li>
+                <li>Losses are only covered under specific conditions and exclude technological items.</li>
+            </ul>
+
+            <p>By using the website and renting a locker, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.</p>
+        </div>
+
+        <!-- Accept and Cancel Buttons -->
+        <div class="flex justify-center gap-6 mt-8">
+            <button onclick="acceptTerms()" class="bg-white text-blue-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg transition-all duration-300">
+                Accept
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Load SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
+              let termsAccepted = false; // Track if terms were accepted already
 function togglePassword() {
     const input = document.getElementById('password');
     const icon = document.getElementById('eyeIcon');
@@ -114,8 +164,52 @@ function togglePassword() {
         `;
     }
 }
+function handleTermsClick(event) {
+        const checkbox = document.getElementById('terms');
+
+        if (!termsAccepted) {
+            event.preventDefault(); // Stop the checkbox from toggling
+            openTermsModal();
+        } else {
+            // After accepting, just toggle normally
+            termsAccepted = checkbox.checked; // Update the tracker (true or false)
+        }
+    }
+
+    function openTermsModal() {
+        const modal = document.getElementById('termsModal');
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.add('opacity-100', 'scale-100');
+            modal.classList.remove('opacity-0', 'scale-95');
+        }, 10);
+    }
+
+    function acceptTerms() {
+        const modal = document.getElementById('termsModal');
+        modal.classList.remove('opacity-100', 'scale-100');
+        modal.classList.add('opacity-0', 'scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            document.getElementById('terms').checked = true;
+            termsAccepted = true; // Mark as accepted
+        }, 300);
+    }
+
+    function validateTermsAgreement() {
+    const checkbox = document.getElementById('terms');
+    if (!checkbox.checked) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Terms and Conditions Required',
+            text: 'Please accept the Terms and Conditions before logging in.',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Okay'
+        });
+        return false; // Stop form submission
+    }
+    return true; // Allow form submission
+}
 </script>
-
-
     </form>
 </x-guest-layout>

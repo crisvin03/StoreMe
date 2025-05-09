@@ -10,6 +10,7 @@ use App\Models\LockerReservation;
 use Illuminate\Support\Facades\Auth;
 use Barryvdh\DomPDF\Facade\Pdf;
 
+
 class AdminLockerController extends Controller // Make sure it extends Controller
 {
     /**

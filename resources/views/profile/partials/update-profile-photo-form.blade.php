@@ -16,9 +16,9 @@
 
         <div class="flex items-center gap-4">
         @if (Auth::user()->profile_picture)
-    <img src="{{ asset('storage/' . Auth::user()->profile_picture) }}"
-         alt="Profile Photo"
-         class="w-16 h-16 rounded-full object-cover">
+        <img src="{{ asset('storage/' . Auth::user()->profile_picture) }}"
+     alt="Profile Photo"
+     class="w-16 h-16 rounded-full object-cover">
 @else
     <img src="{{ asset('images/default-avatar.png') }}"
          alt="Default Avatar"
