@@ -21,7 +21,9 @@
 
 ## Demo Access
 ### 👤 For User 
-- **Link**: [https://storeme.mgtech.ai/](https://storeme.mgtech.ai/)  
+- **Link**: [https://storeme.mgtech.ai/](https://storeme.mgtech.ai/)
+- **Email**: bejes85821@neuraxo.com
+- **Password**: 12345678
 ## Installation
 
 1. **Clone the repository**
