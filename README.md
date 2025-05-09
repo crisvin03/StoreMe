@@ -1,6 +1,6 @@
 # StoreMe
 
-**StoreMe** is a web-based locker reservation system built with Laravel. It allows users to reserve available lockers, track usage time and payments, and manage their reservations. Admins can approve requests, assign durations, and monitor locker activity through a dedicated dashboard.
+**StoreMe** is a simple web-based locker reservation system built with Laravel. It allows users to reserve available lockers, track usage time and payments, and manage their reservations. Admins can approve requests, assign durations, and monitor locker activity through a dedicated dashboard.
 
 ## Features
 
