@@ -20,17 +20,8 @@
 - **Hosting**: Compatible with Apache (aaPanel ready)
 
 ## Demo Access
-
-### 🔐 Admin Login
-- **Link**: [https://storeme.mgtech.ai/admin/login](https://storeme.mgtech.ai/admin/login)  
-- **Email**: `admin@storeme.com`  
-- **Password**: `Storemeallyouwant`  
-
-### 👤 User Login
+### 👤 For User 
 - **Link**: [https://storeme.mgtech.ai/](https://storeme.mgtech.ai/)  
-- **Email**: `habitsuelacrisvin12@gmail.com`  
-- **Password**: `12345678`  
-
 ## Installation
 
 1. **Clone the repository**
