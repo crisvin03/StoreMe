@@ -18,7 +18,7 @@
 - **Frontend**: Blade + Tailwind CSS + JavaScript
 - **Database**: MySQL
 - **Hosting**: http://mgtech.ai/
-- Compatible with Apache (aaPanel ready)
+  Compatible with Apache (aaPanel ready)
 
 ## Demo Access
 ### 👤 For User 
