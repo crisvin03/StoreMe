@@ -8,7 +8,7 @@
 
 ## Features
 
-- User registration with profile photo upload  
+- User registration with profile photo upload (Have Minor Error)
 - View locker availability  
 - Reserve lockers (pending approval)  
 - Real-time tracking of usage time and payment  
