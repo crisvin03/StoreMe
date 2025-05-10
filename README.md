@@ -17,7 +17,8 @@
 - **Backend**: Php (LARAVEL)
 - **Frontend**: Blade + Tailwind CSS + JavaScript
 - **Database**: MySQL
-- **Hosting**: Compatible with Apache (aaPanel ready)
+- **Hosting**: http://mgtech.ai/
+- Compatible with Apache (aaPanel ready)
 
 ## Demo Access
 ### 👤 For User 
