@@ -14,7 +14,7 @@
 
 ## Tech Stack
 
-- **Backend**: Laravel (PHP)
+- **Backend**: Php (LARAVEL)
 - **Frontend**: Blade + Tailwind CSS + JavaScript
 - **Database**: MySQL
 - **Hosting**: Compatible with Apache (aaPanel ready)
