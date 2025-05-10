@@ -2,7 +2,7 @@
 
 **StoreMe** is a simple web-based locker reservation system built with Laravel. It allows users to reserve available lockers, track usage time and payments, and manage their reservations. Admins can approve requests, assign durations, and monitor locker activity through a dedicated dashboard.
 
-> 📌 **Note: This is currently being used at **Sorsogon State University – Main Campus** to manage locker reservations for students.**
+> 📌 **Note: This is currently being used to manage locker reservations for students.**
 
 ---
 
